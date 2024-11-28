@@ -1,0 +1,79 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+}
+
+img {
+  width: 45%;
+  height: auto;
+}
+
+body {
+  background-image: url('./Img/t800.jpeg');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  height: 100vh;
+  margin: 0;
+}
+
+p{
+  color:#5f5f5f
+}
+
+#titulo1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #bcbcbc;
+}
+
+.table-container {
+  max-width: 600px; /* Cambia el tamaño máximo según tus necesidades */
+  margin: auto; /* Centra el div contenedor */
+  padding: 10px; /* Espaciado interno */
+}
+
+/*
+.historial {
+  text-align: left; 
+  color: #ffffff; 
+}
+*/
+
+/* ICONOS  */
+.icon-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+.icon {
+  font-size: 80px; 
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: #333; 
+}
+.icon:hover {
+  transform: scale(1.1);
+  color: #c20a0a; 
+}
+.icon p {
+  text-align: center;
+  font-weight: lighter;
+}
+
+
+
+form label {
+  margin-right: 15px;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+
+
+
