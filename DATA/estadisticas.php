@@ -15,7 +15,7 @@
 <body class="stats">
 
 
-    <div class="container text-center" id="cajaEstadisticas">
+    <div class="container text-center col-6" id="cajaEstadisticas">
         <img src="../Img/SkynetLogo.png" alt="Cargando..." class="img-fluid mx-auto d-block">
         <h4 id="titulo1" class="mb-4">ESTADÍSTICAS</h4>
 
@@ -54,7 +54,7 @@
 
         // Mostrar estadísticas
         if ($totalPartidas > 0) {
-            echo "<div class='table-container'>";
+            echo "<div class='table-container'";
             echo "<table class='table'>";
             echo "<thead><tr><th>Opción</th><th>Humano (%)</th><th>Skynet (%)</th></tr></thead>";
             echo "<tbody>";
