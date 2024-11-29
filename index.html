@@ -26,11 +26,11 @@
             <p>Juega por tu vida a piedra, papel o tijeras.</p>
             <p>Juega al día del juicio final y añade a las máquinas y los humanos como opciones de juego adicionales.</p>
               <div class="btn-group-vertical" style="width: 100%">
-                  <button class="btn btn-outline-danger w-100 mb-2" onclick="window.location.href='game.php'" onmouseover="sonido()">Juega por tu vida</button>
-                  <button class="btn btn-outline-danger w-100 mb-2" onclick="window.location.href='game2.php'" onmouseover="sonido()">Día del juicio final</button>
+                  <button class="btn btn-outline-danger w-100 mb-2" onclick="window.location.href='GAME/game.php'" onmouseover="sonido()">Juega por tu vida</button>
+                  <button class="btn btn-outline-danger w-100 mb-2" onclick="window.location.href='GAME/game2.php'" onmouseover="sonido()">Día del juicio final</button>
                   <button class="btn btn-outline-danger w-100 mb-2" onclick="showHistory()" onmouseover="sonido()">Historial de Partidas</button>
                   <br>
-                  <button class="btn btn-outline-danger w-100" id="control" onclick="toggleMusic()" onmouseover="sonido()">Reproducir/Pausar música</button>
+                  <button class="btn btn-outline-danger w-100" id="control" onclick="toggleMusic()" onmouseover="sonido()">Reproducir/Pausar música</button><!--MUSICA COMO BOTON (INCLUDE)-->
               </div>
           </div>
       </div>
@@ -57,7 +57,7 @@
         }
         //HISTORIAL
         function showHistory() {
-            window.location.href = 'data.php';
+            window.location.href = './DATA/data.php';
         }
     </script>
 

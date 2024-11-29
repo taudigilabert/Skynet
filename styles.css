@@ -1,7 +1,40 @@
+/* === GLOBAL STYLES === */
+body {
+  background-image: url("./Img/t800.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+}
+
+.stats {
+  background-image: url("./Img/fondoStats.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+p {
+  color: #5f5f5f;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+/* === HEADER === */
 header {
   display: flex;
   justify-content: center;
-  align-items: center;;
+  align-items: center;
 }
 
 img {
@@ -9,71 +42,55 @@ img {
   height: auto;
 }
 
-body {
-  background-image: url('./Img/t800.jpeg');
-  background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
-  height: 100vh;
-  margin: 0;
-}
-
-p{
-  color:#5f5f5f
-}
-
+/* === TITLES === */
 #titulo1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: #bcbcbc;
 }
 
+/* === TABLE CONTAINER === */
 .table-container {
-  max-width: 600px; /* Cambia el tamaño máximo según tus necesidades */
-  margin: auto; /* Centra el div contenedor */
-  padding: 10px; /* Espaciado interno */
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
 }
 
-/*
-.historial {
-  text-align: left; 
-  color: #ffffff; 
+#cajaEstadisticas {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 0px;
+  text-align: center;
+  display: inline-block;
+  max-width: 50%;
 }
-*/
 
-/* ICONOS  */
+/* === ICONS === */
 .icon-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 20px 0;
 }
+
 .icon {
-  font-size: 80px; 
+  font-size: 80px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  color: #333; 
+  color: #333;
 }
+
 .icon:hover {
   transform: scale(1.1);
-  color: #c20a0a; 
+  color: #c20a0a;
 }
+
 .icon p {
   text-align: center;
   font-weight: lighter;
 }
 
-
-
+/* === FORM === */
 form label {
   margin-right: 15px;
 }
-
-button {
-  padding: 10px 20px;
-}
-
-
-
-
