@@ -1,16 +1,196 @@
-/* === GLOBAL STYLES === */
+:root {
+  /* ==================== Tipografía ==================== */
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Orbitron', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* ==================== Colores ==================== */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-light: #f0f0f0;
+  --color-gray-medium: #5f5f5f;
+  --color-gray-dark: #333333;
+  --color-red: #c20a0a;
+  --color-red-hover: #ff0000;
+  --color-gray-hover: #7a7a7a;
+
+  /* ==================== Otros ==================== */
+  --border-radius: 0px;
+}
+
+
+
+/* ==================== CUERPO Y TIPOGRAFÍA ==================== */
+html,
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-gray-medium);
   background-image: url("./Img/t800.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
-  margin: 0;
 }
 
+#main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-gray-medium);
+  background-color: var(--color-black);
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: var(--color-gray-light);
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--color-red-hover), 0 0 15px var(--color-red);
+}
+
+#titulo1 {
+  font-family: var(--font-secondary) !important;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+
+/* ==================== BOTONES E ICONOS ==================== */
+/* Botones por defecto */
+button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-gray-medium);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Botones personalizados */
+.btnCustom {
+  background-color: var(--color-black);
+  color: var(--color-gray-medium);
+  border: 2px solid var(--color-red);
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.btnCustom:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  box-shadow: 0 0 50px var(--color-red), 0 0 10px var(--color-red);
+}
+
+/*Boton glitch (progress) */
+
+
+/* Botones de grupo */
+.btn-group-vertical .btn:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.btn-group-vertical .btn:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/* Iconos */
+.icon {
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: var(--color-red);
+}
+
+
+/* ==================== BACKGROUNDS Y CONTENEDORES ==================== */
+.banner {
+  width: 40%;
+  height: auto;
+}
+
+/* Footer */
+#site-footer {
+  background-color: var(--color-black);
+  color: var(--color-gray-medium);
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  font-family: var(--font-primary);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  white-space: normal;
+  overflow: visible;
+}
+
+#site-footer a {
+  color: var(--color-red);
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+#site-footer a:hover {
+  color: var(--color-red-hover);
+}
+
+
 .stats {
-  background-image: url("./Img/fondoStats.jpg");
+  background-color: var(--color-black);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,80 +200,151 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-p {
-  color: #5f5f5f;
-}
-
-button {
-  padding: 10px 20px;
-}
-
-/* === HEADER === */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-img {
-  width: 45%;
-  height: auto;
-}
-
-/* === TITLES === */
-#titulo1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  color: #bcbcbc;
-}
-
-/* === TABLE CONTAINER === */
-.table-container {
-  max-width: 600px;
-  margin: auto;
-  padding: 10px;
 }
 
 #cajaEstadisticas {
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo con transparencia */
-  padding: 20px; /* Espaciado interno */
-  border-radius: 0px; /* Bordes cuadrados */
-  text-align: center; /* Alinea el texto en el centro */
-  display: inline-block !important; /* Asegura que el contenedor se ajuste al contenido */
-  max-width: 50%; /* Establece un límite para el ancho máximo */
-  width: auto; /* Asegura que el contenedor no se expanda más allá del contenido */
-}
-
-
-/* === ICONS === */
-.icon-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.icon {
-  font-size: 80px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  color: #333;
-}
-
-.icon:hover {
-  transform: scale(1.1);
-  color: #c20a0a;
-}
-
-.icon p {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: var(--border-radius);
   text-align: center;
-  font-weight: lighter;
+  max-width: 50%;
+  width: auto;
+  color: var(--color-white);
 }
 
-/* === FORM === */
-form label {
-  margin-right: 15px;
+
+/* ==================== CONTROL DE AUDIO ==================== */
+#audio-control {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 220px;
+  background-color: none;
+  padding: 15px 20px;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  z-index: 1000;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: visible;
+}
+
+#audio-control.collapsed {
+  transform: translateX(-220px);
+}
+
+#audio-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#audio-buttons button {
+  background: none;
+  border: none;
+  color: var(--color-red);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#audio-buttons button:hover {
+  color: var(--color-red-hover);
+}
+
+#audio-control #toggle-audio {
+  position: absolute;
+  top: 50%;
+  right: -41px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-black);
+  border-radius: var(--border-radius);
+  color: var(--color-red);
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: none;
+}
+
+#audio-control #toggle-audio:hover {
+  color: var(--color-red-hover);
+}
+
+#audio-title {
+  font-size: 14px;
+  margin-bottom: 3%;
+  color: var(--color-gray-light);
+}
+
+
+/* ==================== ALERTAS ==================== */
+.alert-message {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-red);
+  color: white;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 15px var(--color-red-hover);
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  max-width: 90%;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ==================== INFO TEXT ==================== */
+.info-text {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  color: var(--color-white);
+  font-size: 14px;
+  margin-bottom: 1rem;
+  user-select: none;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  font-family: var(--font-primary);
+}
+
+.info-text.visible {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.info-header {
+  gap: 8px;
+}
+
+.btn-info {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-red);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-info:hover {
+  color: var(--color-red-hover);
 }
