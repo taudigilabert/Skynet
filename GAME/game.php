@@ -17,54 +17,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="text-center">
-    <!-- Encabezado -->
-    <header>
-        <img src="../Img/SkynetLogo.png" alt="Logo de Skynet" class="img-fluid mx-auto d-block">
-    </header>
+<body>
+    <div id="main-content">
+        <!-- IMAGEN -->
+        <header>
+            <img src="../Img/SkynetLogo.png" alt="Cargando..." class="img-fluid mx-auto d-block banner" />
+        </header>
 
-    <!-- Contenido principal -->
-    <div class="container mt-4">
-        <h4 class="mb-4 text-center" id="titulo1">ELIGE UNA OPCIÓN, HUMANO:</h4>
+        <!-- Contenido principal -->
+        <div class="container mt-4">
+            <h4 class="mb-4 text-center" id="titulo1">ELIGE UNA OPCIÓN, HUMANO:</h4>
 
-        <!-- Formulario opciones -->
-        <form action="game1resultados.php" method="POST">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="icon-container">
-                        <!-- Botones con íconos -->
-                        <div class="icon" onclick="selectOption('Piedra')" aria-label="Seleccionar Piedra">
-                            <i class="fas fa-hand-rock fa-2x"></i>
+            <!-- Formulario opciones -->
+            <form action="game1resultados.php" method="POST">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="icon-container">
+                            <!-- Botones con íconos -->
+                            <div class="icon-container">
+                                <button type="button" class="icon" onclick="selectOption('Piedra')" aria-label="Seleccionar Piedra">
+                                    <i class="fas fa-hand-rock fa-2x"></i>
+                                </button>
+                                <button type="button" class="icon" onclick="selectOption('Papel')" aria-label="Seleccionar Papel">
+                                    <i class="fas fa-hand-paper fa-2x"></i>
+                                </button>
+                                <button type="button" class="icon" onclick="selectOption('Tijeras')" aria-label="Seleccionar Tijeras">
+                                    <i class="fas fa-hand-scissors fa-2x"></i>
+                                </button>
+                            </div>
+
                         </div>
-                        <div class="icon" onclick="selectOption('Papel')" aria-label="Seleccionar Papel">
-                            <i class="fas fa-hand-paper fa-2x"></i>
-                        </div>
-                        <div class="icon" onclick="selectOption('Tijeras')" aria-label="Seleccionar Tijeras">
-                            <i class="fas fa-hand-scissors fa-2x"></i>
-                        </div>
+                        <!-- Campo oculto para enviar la selección -->
+                        <input type="hidden" id="elemento" name="elemento" value="" />
                     </div>
-                    <!-- Campo oculto para enviar la selección -->
-                    <input type="hidden" id="elemento" name="elemento" value="" />
                 </div>
+            </form>
+            <div class="align-align-items-center text-center">
+                <!-- Botón de regreso al menú -->
+                <a href="../index.php" class="btn btnCustom w-50 mt-3"><span>Volver al Menú</span></a>
             </div>
-        </form>
+        </div>
 
-        <!-- Botón de regreso al menú -->
-        <button class="btn btn-outline-danger w-50 mt-3" onclick="window.history.back()">Volver al Menú</button>
     </div>
 
-    <!-- Script para seleccionar opción -->
-    <script>
-        function selectOption(opcion) {
-            const elementoInput = document.getElementById("elemento");
-            if (opcion) {
-                elementoInput.value = opcion;
-                document.querySelector('form').submit();
-            } else {
-                alert("Por favor, selecciona una opción.");
-            }
-        }
-    </script>
+    <!-- FOOTER -->
+    <footer id="site-footer">
+        <p>
+            &copy; 2025 taudigilabert. Todos los derechos reservados. |
+            <a href="https://github.com/taudigilabert" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <a href="mailto:taudigilabert@gmail.com">Contacto</a> |
+            <a href="https://discord.gg/tu-invitacion" target="_blank" rel="noopener noreferrer">Discord</a>
+        </p>
+    </footer>
+
+
+    <!-- SCRIPTS / INCLUDES -->
+    <script src="../script.js"></script>
+    <?php include __DIR__ . '/../INCLUDES/audioPlayer.php'; ?>
+    <script src="../INCLUDES/btnSound.js"></script>
+
 </body>
 
 </html>

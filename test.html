@@ -1,80 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prueba Tipografías</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alerta Skynet</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
 
-  <!-- Google Fonts: Montserrat + Oswald -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Google Fonts: Montserrat + Orbitron -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Google Fonts: Montserrat + Rajdhani -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet" />
+  body {
+    font-family: 'Orbitron', sans-serif, sans-serif;
+    background: #000;
+    color: #fff;
+    height: 100vh;
+    overflow-x: hidden;
+  }
 
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #111;
-      color: #eee;
-      padding: 20px;
-      margin: 0;
-    }
+  #alert-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    width: 90%;
+    padding: 3rem 4rem;
+    font-size: 2.5rem;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.8s ease;
+    border-radius: 0;
+    background-color: #ff0000;
+    color: #f0f0f0;
+    box-shadow: 0 0 15px #ff0000;
+    text-align: center;
+    pointer-events: none;
+    overflow: hidden;
+    text-shadow: 0 0 5px #f0f0f0;
+    z-index: 10000;
+  }
 
-    section {
-      margin-bottom: 40px;
-      padding: 20px;
-      border: 1px solid #333;
-      border-radius: 8px;
-    }
+  #alert-message::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+    background: repeating-linear-gradient(to bottom,
+        #ff4d4d 0px,
+        #ff4d4d 2px,
+        transparent 2px,
+        transparent 5px);
+    animation: scanlinesMove 3s linear infinite;
+    transition: opacity 0.3s ease;
+  }
 
-    /* 1. Montserrat + Oswald */
-    #oswald h1, #oswald h2 {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      color: #ff3c3c;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+  #alert-message > * {
+    position: relative;
+    z-index: 1;
+  }
 
-    /* 2. Montserrat + Orbitron */
-    #orbitron h1, #orbitron h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      color: #3cffef;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    /* 3. Montserrat + Rajdhani */
-    #rajdhani h1, #rajdhani h2 {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      color: #ffb23c;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-  </style>
+  @keyframes scanlinesMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+  }
+</style>
 </head>
 <body>
 
-  <section id="oswald">
-    <h1>Oswald - Título Principal</h1>
-    <h2>Oswald - Subtítulo</h2>
-    <p>Este es un texto con la fuente Montserrat para el cuerpo, combinada con Oswald para los títulos.</p>
-  </section>
+<div id="alert-message">
+  <h1>SKYNET</h1>
+  <p>¿Listo para jugar por tu vida, humano?</p>
+</div>
 
-  <section id="orbitron">
-    <h1>Orbitron - Título Principal</h1>
-    <h2>Orbitron - Subtítulo</h2>
-    <p>Este es un texto con la fuente Montserrat para el cuerpo, combinada con Orbitron para los títulos.</p>
-  </section>
+<script>
+  window.addEventListener('load', () => {
+    const alertMsg = document.getElementById('alert-message');
 
-  <section id="rajdhani">
-    <h1>Rajdhani - Título Principal</h1>
-    <h2>Rajdhani - Subtítulo</h2>
-    <p>Este es un texto con la fuente Montserrat para el cuerpo, combinada con Rajdhani para los títulos.</p>
-  </section>
+    if (!localStorage.getItem('alertShown')) {
+      localStorage.setItem('alertShown', 'true');
+      alertMsg.style.display = 'block';
+
+      // Force reflow para que el navegador aplique display antes de cambiar opacidad
+      alertMsg.offsetHeight;
+
+      alertMsg.style.opacity = '1';
+
+      setTimeout(() => {
+        alertMsg.style.opacity = '0';
+      }, 5000);
+
+      setTimeout(() => {
+        alertMsg.style.display = 'none';
+      }, 5800);
+
+    } else {
+      alertMsg.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>

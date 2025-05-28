@@ -1,5 +1,5 @@
 // Definir sonido
-const hoverSound = new Audio('AUDIO/SOUNDS/sonido.mp3');
+const hoverSound = new Audio('/AUDIO/SOUNDS/sonido.mp3');
 
 // Función para reproducir el sonido desde el inicio
 function playSound() {
