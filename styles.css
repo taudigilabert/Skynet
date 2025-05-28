@@ -86,10 +86,9 @@ h5,
 h6 {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold);
-  color: var(--color-red);
+  color: var(--color-gray-light);
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 8px var(--color-red-hover), 0 0 15px var(--color-red);
 }
 
 #titulo1 {
@@ -99,6 +98,15 @@ h6 {
   color: var(--color-white);
 }
 
+.resultado-title {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
 
 /* ===================== ESTILOS BASE PARA TODOS LOS BOTONES ===================== */
 button {
@@ -211,33 +219,60 @@ button:focus {
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
+  gap: 1rem;
 }
 
-.icon {
+.iconGame {
   background: none;
-  border: 2px solid transparent;
-  padding: 20px;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: auto;
 }
 
-.icon:hover,
-.icon:focus {
-  border-color: var(--color-red-hover);
-  background-color: rgba(255, 0, 0, 0.1);
+.iconGame i {
+  font-size: 6rem;
+  color: var(--color-gray-medium);
+  transition: all 0.3s ease;
 }
 
-.icon.selected {
-  border-color: var(--color-red);
-  background-color: rgba(255, 0, 0, 0.2);
+.iconGame:hover i {
+  color: transparent;
+  background: repeating-linear-gradient(to bottom,
+      var(--color-red-hover) 0px,
+      var(--color-red-hover) 2px,
+      transparent 2px,
+      transparent 5px);
+  background-size: 100% 5px;
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: scanlinesMove 2s linear infinite;
+  opacity: 1;
 }
 
+@keyframes scanlinesMove {
+  0% {
+    background-position: 0 0;
+  }
 
+  100% {
+    background-position: 0 4px;
+  }
+}
 
 /* ==================== BACKGROUNDS Y CONTENEDORES ==================== */
 .banner {
   width: 40%;
+  height: auto;
+}
+
+.bannerHistorial {
+  width: 25%;
   height: auto;
 }
 
@@ -382,4 +417,112 @@ button:focus {
 
 .btn-info:hover {
   color: var(--color-red-hover);
+}
+
+/* ==================== SCROLL ==================== */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+  border-radius: var(--border-radius) !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-red) !important;
+  transition: background-color 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-red-hover) !important;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-red) black;
+}
+
+/* ==================== MODAL ==================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 0 0 var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: var(--color-black);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  max-width: 600px;
+  text-align: center;
+  color: var(--color-gray-light);
+}
+
+.modal-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ==================== TABLA PERSONALIZADA ==================== */
+.table-container {
+  width: 830px;
+  max-height: 420px;
+  overflow-y: auto;
+  margin: 1rem auto 0 auto;
+  border-radius: 0;
+}
+
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-gray-light);
+  background-color: var(--color-black);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.table-custom thead th {
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-red);
+  color: var(--color-red);
+  user-select: none;
+}
+
+.table-custom tbody tr {
+  border-bottom: 1px solid var(--color-gray-dark);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.table-custom tbody tr:hover {
+  background-color: var(--color-red);
+  color: var(--color-gray-light);
+  text-shadow: 0 0 5px var(--color-gray-light);
+}
+
+.table-custom tbody td {
+  padding: 12px 20px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.table-custom tbody tr:last-child {
+  border-bottom: none;
 }

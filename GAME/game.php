@@ -26,23 +26,25 @@
 
         <!-- Contenido principal -->
         <div class="container mt-4">
-            <h4 class="mb-4 text-center" id="titulo1">ELIGE UNA OPCIÓN, HUMANO:</h4>
+
 
             <!-- Formulario opciones -->
             <form action="game1resultados.php" method="POST">
+
                 <div class="row justify-content-center">
                     <div class="col-md-6">
+                    <h4 class="mb-4" id="titulo1">ELIGE UNA OPCIÓN, HUMANO:</h4>
                         <div class="icon-container">
                             <!-- Botones con íconos -->
                             <div class="icon-container">
-                                <button type="button" class="icon" onclick="selectOption('Piedra')" aria-label="Seleccionar Piedra">
-                                    <i class="fas fa-hand-rock fa-2x"></i>
+                                <button type="button" class="iconGame" onclick="selectOption('Piedra')" aria-label="Seleccionar Piedra">
+                                    <i class="fas fa-hand-rock"></i>
                                 </button>
-                                <button type="button" class="icon" onclick="selectOption('Papel')" aria-label="Seleccionar Papel">
-                                    <i class="fas fa-hand-paper fa-2x"></i>
+                                <button type="button" class="iconGame" onclick="selectOption('Papel')" aria-label="Seleccionar Papel">
+                                    <i class="fas fa-hand-paper"></i>
                                 </button>
-                                <button type="button" class="icon" onclick="selectOption('Tijeras')" aria-label="Seleccionar Tijeras">
-                                    <i class="fas fa-hand-scissors fa-2x"></i>
+                                <button type="button" class="iconGame" onclick="selectOption('Tijeras')" aria-label="Seleccionar Tijeras">
+                                    <i class="fas fa-hand-scissors"></i>
                                 </button>
                             </div>
 

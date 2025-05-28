@@ -13,47 +13,115 @@
 </head>
 
 <body>
-    <header>
-        <img src="../Img/SkynetLogo.png" alt="Cargando..." class="img-fluid mx-auto d-block">
-    </header>
-
-    <div class="container mt-4 text-center">
-        <h4 id="titulo1" class="mb-4">HISTORIAL DE PARTIDAS</h4>
-        <pre style="text-align: center;  justify-content:center ; color: #bcbcbc; padding: 10px;">
-            <?php
-            // LEER ARCHIVO
-            $archivo = 'historial.txt';
-            if (file_exists($archivo)) {
-                echo file_get_contents($archivo);
-            } else {
-                echo "Imposible recuperar el Historial.";
-            }
-            if (filesize($archivo) == 0) {
-                echo "Historial de partidas vacío humano.";
-            }
-            ?>
-        </pre>
-
-        <!-- BOTONES -->
-        <div class="container mt-4 text-center">
-            <button class="btn btn-outline-danger w-45" onclick="window.history.back()">Volver al Menú</button>
-            <button class="btn btn-outline-danger w-45" onclick="window.location.href='estadisticas.php'">Ver
-                Estadísticas</button>
+    <div id="main-content">
+        <!-- IMAGEN -->
+        <header>
+            <img src="../Img/SkynetLogo.png" alt="Cargando..." class="img-fluid mx-auto d-block bannerHistorial" />
+        </header>
+        <!-- TITULO HISTORIAL -->
+        <div class="container table-container position-relative text-center mb-0" style="max-width: 800px; margin: 0 auto;">
+            <h4 id="titulo1" class="d-inline-block mx-auto position-relative">
+                HISTORIAL DE PARTIDAS
+            </h4>
+            <a href="#"
+                class="btn btn-link position-absolute"
+                style="right: 1rem; top: 50%; transform: translateY(-50%); color: red;"
+                onclick="limpiarHistorial()">
+                Borrar Historial
+            </a>
         </div>
+    </div>
 
-        <!-- Enlace para borrar el historial -->
-        <a href="#" class="btn btn-link" style="color: #8b0000;" onclick="limpiarHistorial()">Borrar Historial</a>
+    <div class="container mt-0 mb-4 text-center table-container">
+
+        <?php
+        $archivo = 'historial.txt';
+
+        if (file_exists($archivo) && filesize($archivo) > 0) {
+            $lineas = file($archivo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            echo "<table class='table-custom'>";
+            echo "<thead><tr><th>Fecha</th><th>Humano</th><th>Skynet</th><th>Resultado</th></tr></thead><tbody>";
+
+            foreach ($lineas as $linea) {
+                $partes = explode('|', $linea);
+                if (count($partes) === 4) {
+                    $fecha = trim($partes[0]);
+                    $humano = trim(str_replace('HUMANO:', '', $partes[1]));
+                    $skynet = trim(str_replace('SKYNET:', '', $partes[2]));
+                    $resultado = trim(str_replace('RESULTADO:', '', $partes[3]));
+
+                    echo "<tr>";
+                    echo "<td>$fecha</td>";
+                    echo "<td>$humano</td>";
+                    echo "<td>$skynet</td>";
+                    echo "<td>$resultado</td>";
+                    echo "</tr>";
+                }
+            }
+            echo "</tbody></table>";
+        } else {
+            echo "<div class='alert alert-warning'>Historial de partidas vacío humano.</div>";
+        }
+        ?>
+    </div>
+
+    <!-- BOTONES -->
+    <div class="container mt-2 text-center">
+        <button class="btn btnCustom w-25" onclick="window.history.back()"><span>Volver al Menú</span></button>
+        <button class="btn btnCustom w-25" onclick="window.location.href='estadisticas.php'"><span>Ver
+                Estadísticas</span></button>
+    </div>
 
     </div>
 
-    <!-- FALTA POR HACER. FUNCION BORRAR HISTORIAL + FUNCION VER ESTADISTICAS -->
+    <!-- FUNCION BORRAR HISTORIAL + FUNCION VER ESTADISTICAS -->
+    <!-- Modal confirmación borrado -->
+    <div id="confirmModal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <p>Estás a punto de eliminar todo el registro de partidas. <br><br>
+                Esta acción no se puede deshacer.</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="btn btnCustom btn-sm"><span>Sí, eliminar</span></button>
+                <button id="confirmNo" class="btn btnCustom btn-sm"><span>Cancelar</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para manejar el modal de confirmación -->
     <script>
         function limpiarHistorial() {
-            if (confirm("¿Estás seguro que quieres borrar el historial humano?")) {
-                window.location.href = 'limpiarHistorial.php';
-            }
+            document.getElementById('confirmModal').style.display = 'flex';
         }
+
+        document.getElementById('confirmYes').addEventListener('click', function() {
+            window.location.href = 'limpiarHistorial.php';
+        });
+
+        document.getElementById('confirmNo').addEventListener('click', function() {
+            document.getElementById('confirmModal').style.display = 'none';
+        });
+
+        document.getElementById('confirmModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
     </script>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>
+            &copy; 2025 taudigilabert. Todos los derechos reservados. |
+            <a href="https://github.com/taudigilabert" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <a href="mailto:taudigilabert@gmail.com">Contacto</a> |
+            <a href="https://discord.gg/tu-invitacion" target="_blank" rel="noopener noreferrer">Discord</a>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <?php include __DIR__ . '/../INCLUDES/audioPlayer.php'; ?>
+    <script src="../INCLUDES/btnSound.js"></script>
 </body>
 
 
