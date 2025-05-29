@@ -41,8 +41,7 @@
                     <div id="infoText" class="info-text" aria-hidden="true">
                         ¿Te crees afortunado humano?<br>
                         - Juega por tu vida (piedra, papel o tijeras). Obtén la oportunidad de vivir si ganas.<br>
-                        - Juega al día del juicio final y añade a las máquinas y los humanos como opciones de juego
-                        adicionales.
+                        - Juega al día del juicio final y añade máquinas y humanos como opciones adicionales.
                     </div>
 
                     <!-- Título con botón de info al lado -->

@@ -13,9 +13,9 @@
         /* ==================== CONTROL DE AUDIO ==================== */
         #audio-control {
             position: fixed;
-            top: 20px;
+            top: 120px;
             left: 0;
-            width: 220px;
+            width: 200px;
             background-color: transparent;
             padding: 15px 20px;
             color: var(--color-white, #fff);
@@ -58,11 +58,11 @@
         #audio-control #toggle-audio {
             position: absolute;
             top: 50%;
-            right: -41px;
+            right: -55px;
             transform: translateY(-50%);
             width: 40px;
             height: 40px;
-            background-color: #000;
+            background-color: none;
             border-radius: 0px;
             color: #ff0000;
             font-size: 20px;
