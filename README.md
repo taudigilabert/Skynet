@@ -1,5 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/nDnM36WA)
-
 ![Logo de Skynet](Img/SkynetLogo.png)
 
 # INFORME DEL JUEGO
@@ -7,7 +5,10 @@
 ## INTRODUCCIÓN
 Juego de piedra, papel o tijeras, pero en una versión en la que tú, como humano, juegas contra Skynet. Se basa en un menú con 4 opciones: 2 modos de juego, historial de partidas y la opción de reproducir o pausar música.  
 ![Interfaz index.html](Capturas/menu_interfaz.png)
-
+v1.0
+![Interfaz index.php](Capturas/v2/mainMenu.png)
+![Interfaz index.php](Capturas/v2/infoText.png)
+v1.1
 #### Modos de juego:
  - **Juega por tu vida**:
    - Enfréntate a Skynet en el clásico juego de piedra, papel o tijeras.
@@ -60,6 +61,9 @@ El juego utiliza como menú un documento HTML, a partir del cual se crean 3 arch
   Documento HTML donde se encuentran las 4 opciones a elegir. Cada botón redirige a su archivo correspondiente, excepto el botón de reproducción, que ejecuta la función de reproducción o pausa de la música. Estos botones, además de redirigir, emiten un sonido al pasar por encima.  
   **(Es necesario interactuar con la web, como hacer clic en cualquier parte, para activar el sonido de los botones al pasar por encima)**  
   ![Interfaz index.html](Capturas/menu_interfaz.png)
+  v1.0
+  ![Interfaz index.html](Capturas/v2/mainMenu.png)
+  v1.1
   <br>
 
 #### Juega por tu vida
@@ -67,11 +71,18 @@ El juego utiliza como menú un documento HTML, a partir del cual se crean 3 arch
 - **game.php:**
   Corresponde a la primera pantalla de "Juega por tu vida". Este contiene un formulario donde se muestran las distintas opciones para el jugador.  
   ![Interfaz game.php](Capturas/game1_interfaz.png)
+  v1.0
+  ![Interfaz index.html](Capturas/v2/game1.png)
+  ![Interfaz index.html](Capturas/v2/game1select.png)
+  v1.1
   <br>
   
 - **game1resultados.php:**
   Aquí se ejecuta la lógica del juego. Se muestra el resultado y las opciones de ambos bandos, además de una frase que nos dedica Skynet acorde al resultado. En la parte inferior del tablero de resultados tenemos 2 botones: volver a jugar, que nos devuelve a la elección de opciones, y volver al menú.  
   ![Interfaz game1resultados.php](Capturas/game1resultados.php_interfaz.png)
+  v1.0
+  ![Interfaz index.html](Capturas/v2/game1result.png)
+v1.1
   <br>
 
 #### Día del juicio final
@@ -79,17 +90,26 @@ El juego utiliza como menú un documento HTML, a partir del cual se crean 3 arch
 - **game2.php:**
   Corresponde a la primera pantalla de "Día del juicio final". Este contiene un formulario donde se muestran las distintas opciones para el jugador, incluyendo las dos opciones adicionales de Humanidad y Skynet.  
   ![Interfaz game2.php](Capturas/game2.php_interfaz.png)
+  v1.0
+  ![Interfaz index.html](Capturas/v2/game2.png)
+v1.1
   <br>
 
 - **game2resultados.php:**
   Aquí se ejecuta la lógica del juego. Se muestra el resultado y las opciones de ambos bandos, además de una frase que nos dedica Skynet acorde al resultado. En la parte inferior del tablero de resultados tenemos 2 botones: volver a jugar, que nos devuelve a la elección de opciones, y volver al menú.  
   ![Interfaz game2resultados.php](Capturas/game2resultados.php_interfaz.png)
+  v1.0
+  ![Interfaz index.html](Capturas/v2/game2result.png)
+v1.1
 
 #### Historial de partidas
 
 - **data.php:**
   Este archivo está estructurado como un HTML y tiene lógica PHP que lee e imprime los datos registrados en el documento historial.txt, mostrando el historial de partidas registradas. Se basa en un título y un registro. Debajo de esto hay 3 botones: volver al menú, ver estadísticas y borrar historial.  
   ![Interfaz data.php](Capturas/data.php.png)
+  v1.0
+  ![Interfaz index.html](Capturas/v2/historial.png)
+v1.1
   <br>
 
 - **estadisticas.php:**
@@ -101,6 +121,9 @@ El juego utiliza como menú un documento HTML, a partir del cual se crean 3 arch
   
   Se hace una lectura línea por línea y se cuentan las opciones que aparecen. Cada línea leída suma +1 a la variable totalPartidas, y se muestran los resultados obtenidos.  
   ![Interfaz estadisticas.php](Capturas/estadisticas.php_interfaz.png)
+  v1.0
+  ![Interfaz index.html](Capturas/v2/stats1.png)
+v1.1
 
 #### DESARROLLO
 - **IDE:** Visual Studio Code
@@ -128,5 +151,6 @@ El juego utiliza como menú un documento HTML, a partir del cual se crean 3 arch
 #### CONCLUSIONES PERSONALES
 He invertido muchas horas haciendo prueba y error, buscando información por internet, tutoriales y consultando a ChatGPT. Me lo he pasado muy bien creándolo y añadiendo detalles como la música y el sonido, así como diseñando la interfaz del juego y su CSS. Hay varias cosas que me gustaría volver a hacer de nuevo o reorganizar, además de añadir seguramente más modos de juego o juegos distintos contra Skynet. Lo más seguro es que siga trabajando en ello en el futuro.
 <br>
-<br>
-Tomas Audi
+
+**Tomàs Audi**
+[@taudigilabert](https://github.com/taudigilabert)
