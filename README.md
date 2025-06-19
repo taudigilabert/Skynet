@@ -149,7 +149,7 @@ v1.1
 - Implementación de diferentes imágenes según el resultado de las partidas.
 
 #### CONCLUSIONES PERSONALES
-He invertido muchas horas haciendo prueba y error, buscando información por internet, tutoriales y consultando a ChatGPT. Me lo he pasado muy bien creándolo y añadiendo detalles como la música y el sonido, así como diseñando la interfaz del juego y su CSS. Hay varias cosas que me gustaría volver a hacer de nuevo o reorganizar, además de añadir seguramente más modos de juego o juegos distintos contra Skynet. Lo más seguro es que siga trabajando en ello en el futuro.
+He invertido muchas horas haciendo prueba y error, buscando información por internet, tutoriales y consultando distintas fuentes para obtener el resultado exacto que busco. Me lo he pasado muy bien creándolo y añadiendo detalles como la música y el sonido, así como diseñando la interfaz del juego y su CSS. Hay varias cosas que me gustaría volver a hacer de nuevo o reorganizar, además de añadir seguramente más modos de juego o juegos distintos contra Skynet. Lo más seguro es que siga trabajando en ello en el futuro.
 <br>
 
 **Tomàs Audi**
