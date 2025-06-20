@@ -16,7 +16,7 @@
     <link rel="icon" href="Img/skynetLogoIcon.png" type="image/png">
 </head>
 
-<body>
+<body data-page="main-menu">
     <div id="main-content">
 
         <!-- ALERTA INICIAL 
@@ -37,16 +37,18 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
 
-                    <!-- Texto explicativo oculto inicialmente -->
+                    <!-- Texto explicativo oculto -->
                     <div id="infoText" class="info-text" aria-hidden="true">
-                        ¿Te crees afortunado humano?<br>
-                        - Juega por tu vida (piedra, papel o tijeras). Obtén la oportunidad de vivir si ganas.<br>
-                        - Juega al día del juicio final y añade máquinas y humanos como opciones adicionales.
+                        Selecciona tu destino, humano:<br>
+                        - Modo Historia: Supera desafíos y enfréntate a Skynet mientras el mundo se desmorona.<br>
+                        - Modo Arcade: Juega libremente a los juegos desbloqueados y mejora tus habilidades.<br>
+                        - Historial de Partidas: Consulta tus victorias, derrotas y estadísticas de juego.
                     </div>
+
 
                     <!-- Título con botón de info al lado -->
                     <div class="d-flex align-items-center justify-content-center mb-4 info-header">
-                        <h4 id="titulo1" class="m-0 flex-grow-1">ELIGE UNA OPCIÓN, HUMANO:</h4>
+                        <h4 id="titulo1" class="m-0 flex-grow-1">ELIGE TU DESTINO, HUMANO:</h4>
                         <button id="infoBtn" aria-expanded="false" aria-controls="infoText"
                             aria-label="Mostrar más información" title="Más información" class="btn-info">
                             <i class="fas fa-circle-info"></i>
@@ -54,9 +56,15 @@
                     </div>
 
                     <div class="btn-group-vertical mb-4" style="width: 100%;">
-                        <button type="button" class="btn btnCustom w-100 mb-2" data-text="Juega por tu vida"><span>Juega por tu vida</span></button>
-                        <button type="button" class="btn btnCustom w-100 mb-2" data-text="Día del juicio final"><span>Día del juicio final</span></button>
-                        <button type="button" class="btn btnCustom w-100 mb-2" data-text="Historial de Partidas"><span>Historial de Partidas</span></button>
+                        <button type="button" class="btn btnCustom w-100 mb-2" data-text="Modo Historia">
+                            <span>Modo Historia</span>
+                        </button>
+                        <button type="button" class="btn btnCustom w-100 mb-2" data-text="Modo Arcade">
+                            <span>Modo Arcade</span>
+                        </button>
+                        <button type="button" class="btn btnCustom w-100 mb-2" data-text="Historial de Partidas">
+                            <span>Historial de Partidas</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -65,20 +73,10 @@
     </div>
 
 
-    <!-- FOOTER -->
-    <footer id="site-footer">
-        <p>
-            &copy; 2025 taudigilabert. Todos los derechos reservados. |
-            <a href="https://github.com/taudigilabert" target="_blank" rel="noopener noreferrer">GitHub</a> |
-            <a href="mailto:taudigilabert@gmail.com">Contacto</a> |
-            <a href="https://discord.gg/tu-invitacion" target="_blank" rel="noopener noreferrer">Discord</a>
-        </p>
-    </footer>
-
-
     <!-- SCRIPTS / INCLUDES -->
     <script src="./script.js"></script>
     <?php include './INCLUDES/audioPlayer.php'; ?>
+    <?php include './INCLUDES/footer.php'; ?>
     <script src="./INCLUDES/btnSound.js"></script>
 
 
