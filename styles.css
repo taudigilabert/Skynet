@@ -391,10 +391,12 @@ button:focus {
   user-select: none;
   transition: max-height 0.4s ease, opacity 0.4s ease;
   font-family: var(--font-primary);
+  border: solid 1px var(--color-red);
+  padding: 15px;
 }
 
 .info-text.visible {
-  max-height: 200px;
+  max-height: 400px;
   opacity: 1;
 }
 
@@ -418,6 +420,22 @@ button:focus {
 .btn-info:hover {
   color: var(--color-red-hover);
 }
+
+/* ==================== WEAPON INFO capt.1 ==================== */
+.weapon-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.weapon-info p {
+  margin: 0;
+  text-align: justify;
+  font-size: 14px;
+  color: var(--color-white);
+}
+
 
 /* ==================== SCROLL ==================== */
 *::-webkit-scrollbar {

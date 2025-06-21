@@ -96,7 +96,7 @@
                 }
 
                 // Ir al menú historia
-                window.location.href = "../historyMode.php"; // Ajusta si tu ruta cambia
+                window.location.href = "../historyMode.php";
             }
         </script>
 

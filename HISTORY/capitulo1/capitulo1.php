@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Capítulo 1 - Día del Juicio Final</title>
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -17,58 +18,114 @@
     <link rel="icon" href="../../Img/skynetLogoIcon.png" type="image/png" />
 </head>
 
-<body>
+<body data-page="historia-menu">
     <div id="main-content">
+
         <!-- LOGO -->
         <header>
             <img src="../../Img/SkynetLogo.png" alt="Logo Skynet" class="img-fluid mx-auto d-block banner" />
         </header>
 
         <!-- CONTENIDO PRINCIPAL -->
-        <div class="container mt-4 text-center col-md-6">
-            <h4 id="titulo1" class="mb-4">CAPÍTULO 1</h4>
-            <p>El programa destinado a nuestra proteción Skynet ha tonmado conciencia de si mismo y esta intentando tomar el control de nuestras armas de destruccion masiva, elige sabiamente y reza para que tu eleccion contrareste a la arma que la maquina eligira.</p>
-            <p>Que arma de destrución masiva escogeras humano para plantar cara a la anquilación total, el desperatr de Skynet esta aqui, preparate.</p>
-            <h6>ELIGE UNA OPCIÓN, HUMANO:</h6>
+        <section class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
 
-            <form action="capitulo1_resultado.php" method="POST">
-                <div class="icon-container mb-3 d-flex justify-content-center gap-3">
-                    <button type="button" class="iconGame btn-icon" onclick="seleccionar('Nuclear')" aria-label="Nuclear">
-                        <img src="../../Img/iconosCapt1/nuclear.png" alt="Nuclear" />
-                    </button>
-                    <button type="button" class="iconGame btn-icon" onclick="seleccionar('Bio')" aria-label="Biológico">
-                        <img src="../../Img/iconosCapt1/bio.png" alt="Peligro Biológico" />
-                    </button>
-                    <button type="button" class="iconGame btn-icon" onclick="seleccionar('EMP')" aria-label="EMP">
-                        <img src="../../Img/iconosCapt1/pem.png" alt="EMP" />
-                    </button>
-                    <button type="button" class="iconGame btn-icon" onclick="seleccionar('Humanidad')" aria-label="Humanidad">
-                        <img src="../../Img/iconosCapt1/humanidad.png" alt="Humanidad" />
-                    </button>
-                    <button type="button" class="iconGame btn-icon" onclick="seleccionar('Skynet')" aria-label="Skynet">
-                        <img src="../../Img/iconosCapt1/skynet.png" alt="Skynet" />
-                    </button>
+                    <!-- Texto explicativo oculto -->
+                    <div id="infoText" class="info-text" aria-hidden="true">
+                        <h6>Selecciona tu destino, humano:</h6>
+
+                        <div class="weapon-info d-flex align-items-start gap-3 mb-3">
+                            <img src="../../Img/iconosCapt1/nuclear.png" alt="Bombas Nucleares" class="weapon-icon" />
+                            <p><strong>Bombas Nucleares</strong> <br>Una apuesta arriesgada pero segura, dispara los misiles contra los servidores y arrasa con todo.</p>
+                        </div>
+
+                        <div class="weapon-info d-flex align-items-start gap-3 mb-3">
+                            <img src="../../Img/iconosCapt1/bio.png" alt="Armas Biológicas" class="weapon-icon" />
+                            <p><strong>Armas Biológicas</strong> <br>Sacrifica a los humanos responsables de la activación de Skynet antes de que pierdan el control.</p>
+                        </div>
+
+                        <div class="weapon-info d-flex align-items-start gap-3 mb-3">
+                            <img src="../../Img/iconosCapt1/pem.png" alt="Pulso Electromagnético" class="weapon-icon" />
+                            <p><strong>Pulso Electromagnético</strong> <br>Desactiva los sistemas electrónicos de Skynet y deja a las máquinas inertes.</p>
+                        </div>
+
+                        <div class="weapon-info d-flex align-items-start gap-3 mb-3">
+                            <img src="../../Img/iconosCapt1/humanidad.png" alt="Humanidad" class="weapon-icon" />
+                            <p><strong>Humanidad</strong> <br>Confía en la fe de los humanos y evita que Skynet tome el control total mediante la guerra convencional.</p>
+                        </div>
+
+                        <div class="weapon-info d-flex align-items-start gap-3">
+                            <img src="../../Img/iconosCapt1/skynet.png" alt="Skynet" class="weapon-icon" />
+                            <p><strong>Skynet</strong> <br>Destruye a Skynet usando sus propios cortafuegos contra sí mismo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Título con botón de info al lado -->
+                    <div class="d-flex align-items-center justify-content-center mb-3 info-header">
+                        <h4 id="titulo1" class="m-0 flex-grow-1">CAPÍTULO 1</h4>
+
+                        <button id="infoBtn" aria-expanded="false" aria-controls="infoText"
+                            aria-label="Mostrar más información" title="Más información" class="btn-info">
+                            <i class="fas fa-circle-info"></i>
+                        </button>
+                    </div>
+
+                    <!-- Bloque de introducción modular -->
+                    <div class="intro-text text-center mb-4" style="text-align: justify;">
+                        <p>
+                            El programa diseñado para protegernos, Skynet, ha cobrado conciencia propia y está intentando hacerse con el control de nuestras armas de destrución masiva.
+                            La inteligencia artificial ha despertado y está dispuesta a destruirnos para salvarnos de nostros mismos.
+                        </p>
+                        <p>
+                            Elige que arma usar para detener a Skynet antes de que tome el control total de nuestras armas.
+                            El despertar de Skynet ha comenzado... prepárate.
+                        </p>
+                        <h6 class="mb-3" style="text-align: center;">ELIGE UNA OPCIÓN, HUMANO:</h6>
+                    </div>
+
+
+                    <!-- Formulario de elección -->
+                    <form action="capitulo1_resultado.php" method="POST">
+                        <div class="icon-container mb-3 d-flex justify-content-center gap-3 flex-wrap">
+                            <button type="button" class="iconGame btn-icon" onclick="selectOption('Nuclear')" aria-label="Nuclear">
+                                <img src="../../Img/iconosCapt1/nuclear.png" alt="Nuclear" />
+                            </button>
+                            <button type="button" class="iconGame btn-icon" onclick="selectOption('Bio')" aria-label="Biológico">
+                                <img src="../../Img/iconosCapt1/bio.png" alt="Peligro Biológico" />
+                            </button>
+                            <button type="button" class="iconGame btn-icon" onclick="selectOption('EMP')" aria-label="EMP">
+                                <img src="../../Img/iconosCapt1/pem.png" alt="EMP" />
+                            </button>
+                            <button type="button" class="iconGame btn-icon" onclick="selectOption('Humanidad')" aria-label="Humanidad">
+                                <img src="../../Img/iconosCapt1/humanidad.png" alt="Humanidad" />
+                            </button>
+                            <button type="button" class="iconGame btn-icon" onclick="selectOption('Skynet')" aria-label="Skynet">
+                                <img src="../../Img/iconosCapt1/skynet.png" alt="Skynet" />
+                            </button>
+                        </div>
+                        <input type="hidden" name="elemento" id="elemento" />
+                    </form>
+
+                    <!-- Botones de navegación -->
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <a href="../../index.php" class="btn btnCustom w-50"><span>Volver al Menú</span></a>
+                        <a href="../historyMode.php" class="btn btnCustom w-50"><span>Volver</span></a>
+                    </div>
+
                 </div>
-                <input type="hidden" name="elemento" id="elemento" />
-            </form>
+            </div>
+        </section>
 
-
-            <a href="../../index.php" class="btn btnCustom mt-4 w-50"><span>Volver al Menú</span></a>
-        </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- INCLUDES -->
     <?php include '../../INCLUDES/audioPlayer.php'; ?>
     <?php include '../../INCLUDES/footer.php'; ?>
 
     <!-- SCRIPTS -->
+    <script src="../../script.js"></script>
     <script src="../../INCLUDES/btnSound.js"></script>
-    <script>
-        function seleccionar(opcion) {
-            document.getElementById('elemento').value = opcion;
-            document.querySelector('form').submit();
-        }
-    </script>
 </body>
 
 </html>

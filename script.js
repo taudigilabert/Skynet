@@ -38,12 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Botón de información (común a todas las páginas)
     const infoBtn = document.getElementById('infoBtn');
     const infoText = document.getElementById('infoText');
+
     if (infoBtn && infoText) {
         infoBtn.addEventListener('click', () => {
             const expanded = infoBtn.getAttribute('aria-expanded') === 'true';
-            infoBtn.setAttribute('aria-expanded', !expanded);
+            infoBtn.setAttribute('aria-expanded', expanded ? "false" : "true");
             infoText.classList.toggle('visible');
-            infoText.setAttribute('aria-hidden', expanded);
+            infoText.setAttribute('aria-hidden', expanded.toString());
         });
     }
 });
@@ -88,5 +89,7 @@ function initArcadeMenu() {
     }
 }
 
-
-
+// MENÚ HISTORIA (si lo usas en otra parte)
+function initHistoriaMenu() {
+    // Aquí puedes poner lógicas específicas si las necesitas
+}

@@ -39,11 +39,19 @@
         <section class="container mt-3">
             <div class="row justify-content-center">
                 <div class="col-md-6">
+
                     <div id="infoText" class="info-text" aria-hidden="true">
-                        Bienvenido al Modo Historia, humano.<br>
-                        Avanza por cada episodio y demuestra tu valor contra Skynet.
+                        <h6 class="mb-2">Modo Historia</h6>
+                        <p class="mb-0">
+                            Bienvenido al Modo Historia, humano. Cada decisión que tomes afectará el curso de los acontecimientos. Avanza capítulo a capítulo mientras la historia de Skynet se revela ante ti, desentrañando los orígenes del apocalipsis y el destino de la humanidad.
+                        </p>
+                        <p class="mb-0 mt-2">
+                            Solo las victorias te permitirán desbloquear nuevos episodios. El fracaso no es una opción, si caes, deberás volver a intentarlo hasta dominar cada enfrentamiento.
+                        </p>
                     </div>
 
+
+                    <!-- Título con botón de info al lado -->
                     <div class="d-flex align-items-center justify-content-center mb-4 info-header">
                         <h4 id="titulo1" class="m-0 flex-grow-1">SELECCIONA UN EPISODIO:</h4>
                         <button id="infoBtn" aria-expanded="false" aria-controls="infoText" aria-label="Más información" class="btn-info">
@@ -115,8 +123,7 @@
                     </div>
                     <!-- BOTONES -->
                     <div class="d-flex justify-content-center gap-3 mt-4">
-                        <button class="btn btnCustom w-50" onclick="window.location.href='../index.php'"><span>Volver al Menú</span></button>
-                        <button class="btn btnCustom w-50" onclick="window.history.back()"><span>Volver</span></button>
+                        <button class="btn btnCustom w-100" onclick="window.location.href='../index.php'"><span>Volver al Menú</span></button>
                     </div>
                 </div>
             </div>

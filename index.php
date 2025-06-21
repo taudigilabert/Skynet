@@ -32,17 +32,19 @@
             <img src="./Img/SkynetLogo.png" alt="Cargando..." class="img-fluid mx-auto d-block banner" />
         </header>
 
-        <!-- MENU OPCIONES -->
-        <section class="container mt-3">
+        <section class="container mt-2">
             <div class="row justify-content-center">
                 <div class="col-md-6">
 
                     <!-- Texto explicativo oculto -->
                     <div id="infoText" class="info-text" aria-hidden="true">
-                        Selecciona tu destino, humano:<br>
-                        - Modo Historia: Supera desafíos y enfréntate a Skynet mientras el mundo se desmorona.<br>
-                        - Modo Arcade: Juega libremente a los juegos desbloqueados y mejora tus habilidades.<br>
-                        - Historial de Partidas: Consulta tus victorias, derrotas y estadísticas de juego.
+                        <h6>Selecciona tu destino, humano:</h6>
+
+                        <p class="mb-3"><strong>Modo Historia</strong><br>Avanza en la historia, supera desafíos y enfréntate a Skynet mientras el mundo se desmorona.</p>
+
+                        <p class="mb-3"><strong>Modo Arcade</strong><br> Juega libremente a los juegos desbloqueados y mejora tus habilidades.</p>
+
+                        <p><strong>Historial de Partidas</strong><br> Consulta tus victorias, derrotas y estadísticas de juego.</p>
                     </div>
 
 
@@ -55,6 +57,7 @@
                         </button>
                     </div>
 
+                    <!-- MENU OPCIONES -->
                     <div class="btn-group-vertical mb-4" style="width: 100%;">
                         <button type="button" class="btn btnCustom w-100 mb-2" data-text="Modo Historia">
                             <span>Modo Historia</span>
