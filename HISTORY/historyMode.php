@@ -65,7 +65,7 @@
                             <div class="card h-100 episode-card locked" data-episode="1">
                                 <div class="card-body">
                                     <h5 class="card-title">Capítulo 1:<br> El Despertar</h5>
-                                    <p class="card-text">Skynet toma conciencia. Piedra, papel, tijeras… y humanidad vs máquinas.</p>
+                                    <p class="card-text">Skynet toma conciencia y intenta apuderarse de las armas de destrucción masiva.</p>
                                     <button class="btn btnCustom w-100" disabled><i class="fas fa-lock"></i>Bloqueado</button>
                                 </div>
                             </div>
