@@ -30,7 +30,6 @@
             opacity: 1;
         }
 
-        /* Modal estilos básicos */
         #confirmModal.modal-overlay {
             display: none;
 

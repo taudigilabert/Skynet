@@ -8,8 +8,8 @@ $archivoHistorial = 'historial.txt';
 if (file_exists($archivoHistorial)) {
     // Vaciar el archivo
     file_put_contents($archivoHistorial, '');
-    echo "<script>alert('Historial borrado humano.'); window.location.href='data.php';</script>";
+    echo "<script>window.location.href='data.php';</script>";
 } else {
-    echo "<script>alert('Imposible encontrar el historial humano.'); window.location.href='data.php';</script>";
+    echo "<script>alert('Error al borrar.'); window.location.href='data.php';</script>";
 }
 ?>
