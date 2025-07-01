@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Capítulo 1 - Día del Juicio Final</title>
+    <title>Capítulo 1 - El despertar</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 
         <!-- LOGO -->
         <header>
-            <img src="../../Img/SkynetLogo.png" alt="Logo Skynet" class="img-fluid mx-auto d-block banner" />
+            <img src="../../Img/SkynetLogo.png" alt="Logo Skynet" class="img-fluid mx-auto d-block banner_game" />
         </header>
 
         <!-- CONTENIDO PRINCIPAL -->
@@ -86,7 +86,7 @@
 
 
                     <!-- Formulario de elección -->
-                    <form action="capitulo1_resultado.php" method="POST">
+                    <form action="capitulo1_resultados.php" method="POST">
                         <div class="icon-container mb-3 d-flex justify-content-center gap-3 flex-wrap">
                             <button type="button" class="iconGame btn-icon" onclick="selectOption('Nuclear')" aria-label="Nuclear">
                                 <img src="../../Img/iconosCapt1/nuclear.png" alt="Nuclear" />
@@ -109,8 +109,7 @@
 
                     <!-- Botones de navegación -->
                     <div class="d-flex justify-content-center gap-3 mt-4">
-                        <a href="../../index.php" class="btn btnCustom w-50"><span>Volver al Menú</span></a>
-                        <a href="../historyMode.php" class="btn btnCustom w-50"><span>Volver</span></a>
+                        <a href="../historyMode.php" class="btn btnCustom w-100"><span>Volver</span></a>
                     </div>
 
                 </div>
@@ -126,6 +125,13 @@
     <!-- SCRIPTS -->
     <script src="../../script.js"></script>
     <script src="../../INCLUDES/btnSound.js"></script>
+
+    <script>
+        function selectOption(valor) {
+            document.getElementById('elemento').value = valor;
+            document.forms[0].submit();
+        }
+    </script>
 </body>
 
 </html>
