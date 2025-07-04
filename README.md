@@ -1,156 +1,194 @@
 ![Logo de Skynet](Img/SkynetLogo.png)
 
-# INFORME DEL JUEGO
+# INFORME DEL JUEGO – VERSIÓN 2.0
 
 ## INTRODUCCIÓN
-Juego de piedra, papel o tijeras, pero en una versión en la que tú, como humano, juegas contra Skynet. Se basa en un menú con 4 opciones: 2 modos de juego, historial de partidas y la opción de reproducir o pausar música.  
-![Interfaz index.html](Capturas/menu_interfaz.png)
-v1.0
-![Interfaz index.php](Capturas/v2/mainMenu.png)
-![Interfaz index.php](Capturas/v2/infoText.png)
-v1.1
-#### Modos de juego:
- - **Juega por tu vida**:
-   - Enfréntate a Skynet en el clásico juego de piedra, papel o tijeras.
-   <br>
- - **Día del juicio final**:
-   - Igual que "Juega por tu vida", pero añadiendo como opciones la Humanidad y Skynet.
+
+Inicialmente, el proyecto consistía en un clásico *Piedra, Papel o Tijeras* ambientado en una batalla entre el jugador humano y **Skynet**.
+
+En esta **versión 2.0**, el juego evoluciona incorporando un **modo historia dividido en capítulos**, cada uno estructurado como minijuegos inspirados en el clásico, pero adaptados a la narrativa de la guerra contra Skynet.
+
+Actualmente está disponible el **primer capítulo**, que presenta una misión introductoria. Al superar esta primera batalla, se desbloquea el acceso al **segundo capítulo**, aún no jugable. La historia se desarrolla progresivamente, aportando nuevos retos y contexto al conflicto entre la humanidad y la inteligencia artificial.
+
+Además, se ha añadido un **modo arcade**, que permite rejugar los minijuegos desbloqueados en el modo historia sin restricciones narrativas ni objetivos específicos.
+
+La interfaz ha sido mejorada con un menú principal más completo, que ofrece acceso a los modos de juego, historial de partidas, estadísticas detalladas y un reproductor de música interactivo.
+
+![Menú Principal](Capturas/v2/mainMenu.png)  
+*Pantalla del menú principal.*
+
+---
 
 ## OBJETIVO DEL JUEGO
-Como humano, tu objetivo en el juego es vencer a Skynet. Es fácil: si ganas o empatas, vives; si pierdes, mueres.
 
-## REGLAS DEL JUEGO
-Las reglas son muy simples: el humano escoge una opción, y Skynet elige otra. En ambos modos de juego, las normas son las mismas, pero hay una variación en "Día del juicio final", ya que se añaden 2 elecciones.
+Como humano, tu único objetivo es **vencer a Skynet**.  
+- Si ganas o empatas, sobrevives.  
+- Si pierdes, Skynet gana.
 
-- **Juega por tu vida:**
-  - Piedra vence a Tijeras.
-  - Tijeras vence a Papel.
-  - Papel vence a Piedra.
-  <br>
-  
-- **Día del juicio final:**
-  - **Piedra**:
-    - Gana a Tijeras.
-    - Pierde ante Papel.
-    - Empata con Piedra.
+Además, el juego estructura la experiencia en **capítulos**, que representan momentos clave en la guerra entre la humanidad y Skynet. Para avanzar, debes superar los retos de cada capítulo.
 
-  - **Papel**:
-    - Gana a Piedra.
-    - Pierde ante Tijeras.
-    - Empata con Papel.
-  
-  - **Tijeras**:
-    - Gana a Papel.
-    - Pierde ante Piedra.
-    - Empata con Tijeras.
+- Al completar un capítulo, se desbloquea automáticamente el siguiente.  
+- Los minijuegos completados en el modo historia se habilitan en el modo arcade para ser jugados libremente.  
 
-  - **Humanidad**:
-    - Gana a Skynet.
-    - Pierde ante Piedra.
-    - Empata con Humanidad.
+El progreso se guarda entre sesiones, permitiendo que el jugador complete la campaña a su propio ritmo.
 
-  - **Skynet**:
-    - Gana a Tijeras.
-    - Pierde ante Papel.
-    - Empata con Skynet.
+---
 
-## ESTRUCTURA DEL JUEGO
-El juego utiliza como menú un documento HTML, a partir del cual se crean 3 archivos PHP.
-#### Menú
-- **index.html:**
-  Documento HTML donde se encuentran las 4 opciones a elegir. Cada botón redirige a su archivo correspondiente, excepto el botón de reproducción, que ejecuta la función de reproducción o pausa de la música. Estos botones, además de redirigir, emiten un sonido al pasar por encima.  
-  **(Es necesario interactuar con la web, como hacer clic en cualquier parte, para activar el sonido de los botones al pasar por encima)**  
-  ![Interfaz index.html](Capturas/menu_interfaz.png)
-  v1.0
-  ![Interfaz index.html](Capturas/v2/mainMenu.png)
-  v1.1
-  <br>
+## MODOS DE JUEGO
 
-#### Juega por tu vida
+### 1. Modo Historia
 
-- **game.php:**
-  Corresponde a la primera pantalla de "Juega por tu vida". Este contiene un formulario donde se muestran las distintas opciones para el jugador.  
-  ![Interfaz game.php](Capturas/game1_interfaz.png)
-  v1.0
-  ![Interfaz index.html](Capturas/v2/game1.png)
-  ![Interfaz index.html](Capturas/v2/game1select.png)
-  v1.1
-  <br>
-  
-- **game1resultados.php:**
-  Aquí se ejecuta la lógica del juego. Se muestra el resultado y las opciones de ambos bandos, además de una frase que nos dedica Skynet acorde al resultado. En la parte inferior del tablero de resultados tenemos 2 botones: volver a jugar, que nos devuelve a la elección de opciones, y volver al menú.  
-  ![Interfaz game1resultados.php](Capturas/game1resultados.php_interfaz.png)
-  v1.0
-  ![Interfaz index.html](Capturas/v2/game1result.png)
-v1.1
-  <br>
+Modo narrativo estructurado en capítulos, que narra el enfrentamiento entre la humanidad y Skynet a través de minijuegos temáticos.
 
-#### Día del juicio final
+- Cada capítulo incluye una escena introductoria y un juego asociado.  
+- Al completar un capítulo, se desbloquea el siguiente.  
+- Se puede reiniciar el progreso en cualquier momento.  
+- Los minijuegos completados se habilitan automáticamente en el modo arcade.
 
-- **game2.php:**
-  Corresponde a la primera pantalla de "Día del juicio final". Este contiene un formulario donde se muestran las distintas opciones para el jugador, incluyendo las dos opciones adicionales de Humanidad y Skynet.  
-  ![Interfaz game2.php](Capturas/game2.php_interfaz.png)
-  v1.0
-  ![Interfaz index.html](Capturas/v2/game2.png)
-v1.1
-  <br>
+Este modo está pensado para seguir la historia principal y desbloquear contenido nuevo progresivamente.
 
-- **game2resultados.php:**
-  Aquí se ejecuta la lógica del juego. Se muestra el resultado y las opciones de ambos bandos, además de una frase que nos dedica Skynet acorde al resultado. En la parte inferior del tablero de resultados tenemos 2 botones: volver a jugar, que nos devuelve a la elección de opciones, y volver al menú.  
-  ![Interfaz game2resultados.php](Capturas/game2resultados.php_interfaz.png)
-  v1.0
-  ![Interfaz index.html](Capturas/v2/game2result.png)
-v1.1
+![Modo Historia](Capturas/v2/storyMode.png)  
+*Menú principal del modo historia.*
 
-#### Historial de partidas
+---
 
-- **data.php:**
-  Este archivo está estructurado como un HTML y tiene lógica PHP que lee e imprime los datos registrados en el documento historial.txt, mostrando el historial de partidas registradas. Se basa en un título y un registro. Debajo de esto hay 3 botones: volver al menú, ver estadísticas y borrar historial.  
-  ![Interfaz data.php](Capturas/data.php.png)
-  v1.0
-  ![Interfaz index.html](Capturas/v2/historial.png)
-v1.1
-  <br>
+### 1.1 Capítulo 1: El despertar
 
-- **estadisticas.php:**
-  Primero se inicializan 4 variables: 
-  - "opciones": un array con las 5 opciones posibles. 
-  - "humanoOpciones": un array con las 5 opciones inicializadas a 0.
-  - "skynetOpciones": un array con las 5 opciones inicializadas a 0.
-  - "totalPartidas": inicializada en 0.  
-  
-  Se hace una lectura línea por línea y se cuentan las opciones que aparecen. Cada línea leída suma +1 a la variable totalPartidas, y se muestran los resultados obtenidos.  
-  ![Interfaz estadisticas.php](Capturas/estadisticas.php_interfaz.png)
-  v1.0
-  ![Interfaz index.html](Capturas/v2/stats1.png)
-v1.1
+Skynet toma conciencia de sí misma y llega a una conclusión inquietante:  
+para salvar a la humanidad, debe **protegerla de sí misma**.
 
-#### DESARROLLO
-- **IDE:** Visual Studio Code
-- **Lenguajes:** PHP, JavaScript, HTML, CSS
-  
-#### DESAFÍOS EN EL PROYECTO
-- Música en el menú.
-- Efecto de sonido en los botones del menú.
-- CSS con múltiples estilos de etiqueta, id y clases.
-- Estructura de los archivos del juego.
-- Uso de íconos como opciones en el formulario.
-- Disposición de los elementos al mostrar los resultados.
-- Registro de partidas jugadas y almacenamiento en historial.txt.
-- Lectura de fichero línea por línea e impresión de los resultados.
-- Opción de borrar registros en el historial.
+Su primer paso es tomar el control de las armas de destrucción masiva que los humanos han creado para defenderse... y usarlas en su contra.
 
-#### IDEAS A FUTURO
-- Añadir efectos de sonido en el resto de botones del juego.
-- Reproducción continua de la música a través de las distintas ventanas del juego.
-- Añadir botón de mute, play y pause en todas las pantallas del juego.
-- Creación de un modo de juego por vidas.
-- Implementación de distintos modos de juego.
-- Implementación de diferentes imágenes según el resultado de las partidas.
+Tu misión es elegir el arma adecuada para contrarrestar el ataque de Skynet.  
+Gana el que primero llegue a 4 puntos.
 
-#### CONCLUSIONES PERSONALES
-He invertido muchas horas haciendo prueba y error, buscando información por internet, tutoriales y consultando distintas fuentes para obtener el resultado exacto que busco. Me lo he pasado muy bien creándolo y añadiendo detalles como la música y el sonido, así como diseñando la interfaz del juego y su CSS. Hay varias cosas que me gustaría volver a hacer de nuevo o reorganizar, además de añadir seguramente más modos de juego o juegos distintos contra Skynet. Lo más seguro es que siga trabajando en ello en el futuro.
-<br>
+Este desafío se presenta como un minijuego basado en la lógica de Piedra, Papel o Tijeras, pero con más opciones y adaptado al contexto narrativo.
 
-**Tomàs Audi**
-[@taudigilabert](https://github.com/taudigilabert)
+![Capítulo 1 - El despertar (juego)](Capturas/v2/capitulo1.png)
+*Juego del capítulo 1.*
+![Capítulo 1 - El despertar (instrucciones)](Capturas/v2/capitulo1Instruciones.png)
+*Instuciones del capítulo 1.*
+![Capítulo 1 - El despertar (marcador)](Capturas/v2/capitulo1Marcador.png)
+*Marcador del capítulo 1.*
+
+---
+
+### 2. Modo Arcade
+
+Modo libre que permite rejugar los minijuegos completados en el modo historia sin restricciones.
+
+- No incluye narrativa ni objetivos específicos.  
+- Ideal para practicar o jugar sin presión.  
+- Solo están disponibles los minijuegos desbloqueados en el modo historia.
+
+
+
+---
+
+## HISTORIAL DE PARTIDAS
+
+Cada partida jugada se almacena en el archivo `historial.txt`, permitiendo consultar el registro completo.
+
+La pantalla de historial muestra:  
+- Lista de partidas jugadas con formato claro.  
+- Botones para volver al menú, ver estadísticas o borrar el historial.
+
+![Historial](Capturas/v2/historial.png)
+
+---
+
+## ESTADÍSTICAS
+
+La versión 2.0 incorpora un sistema visual para analizar datos de juego:
+
+- Porcentaje de elecciones de cada opción por el jugador humano y por Skynet.  
+- Representación mediante barras de colores diferenciadas.  
+- Estadísticas calculadas en tiempo real a partir del historial.
+
+Actualmente, esta funcionalidad está en desarrollo.
+
+![Estadísticas](Capturas/v2/stats1.png)
+
+---
+
+## FUNCIONALIDADES TÉCNICAS
+
+### ESTRUCTURA DEL PROYECTO
+
+El proyecto está organizado en carpetas y archivos para mantener una estructura modular y clara.
+
+#### 📁 `DATA/`  
+Contiene archivos relacionados con el historial de partidas y estadísticas:  
+
+#### 📁 `GAME/`  
+Contiene los juegos del modo arcade, desbloqueables tras completar capítulos.
+
+#### 📁 `HISTORY/`  
+Contiene el modo historia, dividido por capítulos, con páginas narrativas, juegos y resultados.  
+(Ejemplo: Capítulo 1: El despertar)
+
+#### 📁 `INCLUDES/`  
+Contiene elementos reutilizables en todo el sitio:  
+- `audioPlayer.php`: Reproductor de música en segundo plano.  
+- `btnSound.js`: Control del sonido al interactuar con botones.
+
+#### Archivos raíz  
+
+- `index.php`: Menú principal con navegación, sonido y música.  
+- `script.js`: Scripts esenciales para navegación y audio.  
+- `styles.css`: Estilos principales del proyecto.
+
+---
+
+### Tecnologías y herramientas utilizadas
+
+- HTML, CSS, JavaScript, PHP  
+- Visual Studio Code (IDE)  
+- Bootstrap 5 para componentes visuales modernos  
+- FontAwesome para íconos  
+- Archivos locales para sonidos y música (`btnSound.js`, `audioPlayer.php`)
+
+---
+
+## MEJORAS EN LA VERSIÓN 2.0
+
+- Rediseño completo del menú principal.  
+- Inclusión de estadísticas gráficas.  
+- Añadido botón de borrar historial con ícono visual.  
+- Uso de íconos para representar opciones en lugar de texto plano.  
+- Mensajes de resultado mejorados con estilo de tabla clara.  
+- Diseño responsivo adaptado a distintos tamaños de pantalla.  
+- Separación de archivos para mejorar organización del código.  
+- Mayor consistencia visual y sonora.  
+- Creación del modo historia con narrativa integrada y sistema de desbloqueo progresivo.  
+- Implementación de la funcionalidad para reiniciar progreso en modo historia.
+
+---
+
+## IDEAS FUTURAS
+
+- Implementar distintos niveles de dificultad.  
+- Crear un sistema de usuarios con cuentas y puntuaciones globales.  
+- Añadir sistema de logros desbloqueables.  
+- Ampliar la interacción narrativa con Skynet.  
+- Completar todos los capítulos del modo historia.  
+- Desarrollar completamente el sistema arcade.  
+- Mejorar el sistema de estadísticas para datos más precisos y visuales.  
+- Migrar a lógica PHP avanzada con manejo de sesiones y autenticación.  
+- Implementar creación de cuentas e inicio de sesión.  
+- Añadir funcionalidad para compartir resultados y logros en redes sociales.
+
+---
+
+## CONCLUSIONES PERSONALES
+
+Esta versión representa un salto significativo respecto a la primera, integrando funcionalidades pendientes como registro estadístico, mejoras visuales y una interfaz más sólida.
+
+Cada nueva función ha sido una oportunidad para profundizar en HTML, CSS, PHP y JavaScript. Continúo con ganas de expandir este proyecto, explorar nuevas mecánicas y conectar el juego con bases de datos para una experiencia más completa y persistente.
+
+**Tomàs Audi**  
+[GitHub: taudigilabert](https://github.com/taudigilabert)
+
+*Video demostración en YouTube:* 
+[![Ver en YouTube](https://img.youtube.com/vi/fO48-LmAzGQ/0.jpg)](https://youtu.be/fO48-LmAzGQ)
+
