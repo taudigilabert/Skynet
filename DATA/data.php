@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body>
+<body data-page="main-menu">
     <div id="main-content">
         <!-- IMAGEN -->
         <header>
@@ -26,9 +26,11 @@
             <a href="#"
                 class="btn btn-link position-absolute"
                 style="right: 1rem; top: 50%; transform: translateY(-50%); color: red;"
-                onclick="limpiarHistorial()">
-                Borrar Historial
+                onclick="limpiarHistorial()"
+                aria-label="Borrar historial de partidas">
+                <i class="fas fa-exclamation-triangle me-1"></i> Borrar Historial
             </a>
+
         </div>
     </div>
 
@@ -60,7 +62,7 @@
             }
             echo "</tbody></table>";
         } else {
-            echo "<div class='alert alert-warning'>Historial de partidas vacío humano.</div>";
+            echo "<p>Historial de partidas vacío.</p>";
         }
         ?>
     </div>
@@ -108,19 +110,10 @@
         });
     </script>
 
-    <!-- Footer -->
-    <footer id="site-footer">
-        <p>
-            &copy; 2025 taudigilabert. Todos los derechos reservados. |
-            <a href="https://github.com/taudigilabert" target="_blank" rel="noopener noreferrer">GitHub</a> |
-            <a href="mailto:taudigilabert@gmail.com">Contacto</a> |
-            <a href="https://discord.gg/tu-invitacion" target="_blank" rel="noopener noreferrer">Discord</a>
-        </p>
-    </footer>
-
     <!-- Scripts -->
     <script src="../script.js"></script>
     <?php include __DIR__ . '/../INCLUDES/audioPlayer.php'; ?>
+    <?php include '../INCLUDES/footer.php'; ?>
     <script src="../INCLUDES/btnSound.js"></script>
 </body>
 
